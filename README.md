@@ -6,4 +6,4 @@ Projeto simples de gerador de senha, feito em TypeScript para fins de estudos.
 # Password Generator TYPESCRIPT
 A simple password generator project made with TypeScript for study purposes.
 
-### This project is written in English
+### This project is written in English.
