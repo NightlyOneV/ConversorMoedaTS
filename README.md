@@ -1,2 +1,2 @@
-# ConversorMoedaTS
-Projeto simples de conversor de moedas feito em TypeScript para fins de estudos.
+# Gerador de Senhas TYPESCRIPT
+Projeto simples de gerador de senha, feito em TypeScript para fins de estudos.
