@@ -18,8 +18,58 @@ const minCharRange : number = 8
 const maxCharRange : number = 14
 const allowedChar  : string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*()'
 const charLength   : number = allowedChar.length
+const genButton    : any    = document.getElementById("generateButton")
+const passLabel    : any    = document.getElementById("password")
 
-// Function
+const indicators   : any    = {
+    haveUpper: document.getElementById("haveUpper")     as HTMLHeadingElement,
+    haveLower: document.getElementById("haveLower")     as HTMLHeadingElement,
+    haveNumber: document.getElementById("haveNumber")   as HTMLHeadingElement,
+    haveSpecial: document.getElementById("haveSpecial") as HTMLHeadingElement,
+    howLength: document.getElementById("howLength")     as HTMLHeadingElement,
+};
+
+const indicatorTXT : any    = {
+    
+    hasUppercase: {
+        true: "✅ Has Uppercase ✅",
+        false: "❌ Has Uppercase ❌",
+    },
+    
+    hasLowercase: {
+        true: "✅ Has Lowercase ✅",
+        false: "❌ Has Lowercase ❌",
+    },
+    
+    hasNumber: {
+        true: "✅ Has Number ✅",
+        false: "❌ Has Number ❌",
+    },
+    
+    hasSpecial: {
+        true: "✅ Has SpecialChar ✅",
+        false: "❌ Has SpecialChar ❌",
+    },
+
+    passLength: (length: number) => `Password Length: ${length}`
+}
+
+// Functions
+
+function setIndicator(id: string, value: boolean | string){
+    // Modifying the text of a html element (that has text content)
+    const htmlElement = indicators[id]
+
+    if (!htmlElement){
+        alert(`Error! HTML ID Element not found ${id}`)
+    }
+        
+    if (typeof(value) === "boolean"){
+        //TODO
+    }
+
+}
+
 function getRandomNumber(): number{
     // Returning a random number between minCharRange and maxCharRange
     return Math.floor(Math.random() * (maxCharRange - minCharRange + 1)) + minCharRange
@@ -43,25 +93,30 @@ function passwordValidation(password: string): boolean{
     const hasLowercase: boolean = /[a-z]/      .test(password)
     const hasNumbers  : boolean = /\d/         .test(password)
     const hasSpecial  : boolean = /[!@#$%&*()]/.test(password)
+    const length      : number  =              password.length
 
     return hasUppercase && hasLowercase && hasNumbers && hasSpecial
 }
 
-function newPassword(): void{
+function newPassword(): string{
     // Will generate a new password and validate it.
-    const password: string = generatePassword()
+    const password: string  = generatePassword()
     const isSecure: boolean = passwordValidation(password)
+    
+    passLabel.textContent   = password
 
     console.log(`Your random password was generated: ${password}`)
 
     if (isSecure) {
-        console.log("✅ | Your password is strong and secure, remember to save it!")
+        return "✅ | Your password is strong and secure, remember to save it!"
     } else {
-        console.log("❌ | Your password is weak and unsafe, you can try again if you want.")
+        return "❌ | Your password is weak and unsafe, you can try again if you want."
     }
 
 }
 
 // Callback
-newPassword()
+genButton.addEventListener("click", () =>{
+    newPassword()
+})
 

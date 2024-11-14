@@ -1,21 +1,64 @@
 <!DOCTYPE html>
     <html>
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>
                 RANDOM PASSWORD GENERATOR
             </title>
             <link href="./styles/output.css" rel="stylesheet">
         </head>
             
-        <body>
-            <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center gap-x-4">
-                <h1>  
-                    Generate a random password really easy with this tool!
+        <header>
+            <div class="w-full flex justify-center bg-blue-400 h-20 items-center shadow-xl">
+                <h1 class=" text-white font-medium text-4xl">
+                    Random Password Generator
                 </h1>
             </div>
-            <a href="https://github.com/NightlyOneV/GeradorSenhaTS/tree/main">Made by NightlyOne.</a>
+        </header>
 
+        <body>
+                
+            <div class="rounded-3xl bg-slate-100 shadow-xl p-48 sm:mt-20 sm:mx-52 items-center grid-cols-1">
+                <h1 class=" text-center font-medium text-green-600 text-2xl ">
+                    Your generated password is
+                </h1>
+                    
+                <h1 id="password" class=" text-center mt-6">
+                    ...
+                </h1>
+
+                <div class="flex justify-center mt-7">
+                    <button id="generateButton"  class="w-48 h-8 bg-green-400 rounded-md text-white">
+                        GENERATE PASSWORD
+                    </button>
+                    
+                </div>
+                    
+                <h2 id="haveUpper">
+                    ❌ Has Uppercase ❌
+                </h2>
+                <h2 id="haveLower">
+                    ❌ Has Lowercase ❌
+                </h2>
+                <h2 id="haveNumber">
+                    ❌ Has Numbers ❌
+                </h2>
+                <h2 id="haveSpecial">
+                    ❌ Has Special Characters ❌
+                </h2>
+                <h2 id="howLength">
+                    Password Length: ?
+                </h2>
+
+            </div>
 
         </body>
 
+        <footer>
+
+        </footer>
+
+
+        <script src="./js/main.js"></script>
     </html>
