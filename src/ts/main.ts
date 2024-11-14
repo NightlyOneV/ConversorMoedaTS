@@ -9,7 +9,7 @@
     - Practicing my english.
     
     Project Features:
-    - Random password length, ranging from 8 to 14.
+    - Random password length, ranging from 8 to 24.
     - Big variety of characters allowed, with special characters.
     - Password validation (If it at least has a random number, uppercase, lowercase, special chars, etc..).
 
